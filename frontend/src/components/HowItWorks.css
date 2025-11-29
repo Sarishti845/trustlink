@@ -25,12 +25,12 @@
   position: relative;
 }
 
-.step-card {
+.hiw-step-card {
   max-width: 350px;
   position: relative;
 }
 
-.step-icon-wrapper {
+.hiw-step-icon-wrapper {
   position: absolute;
   top: -25px;
   left: 50%;
@@ -42,7 +42,7 @@
   font-size: 1.5rem;
 }
 
-.step-number {
+.hiw-step-number {
   width: 80px;
   height: 80px;
   border-radius: 20px;
@@ -55,17 +55,17 @@
   color: white;
 }
 
-.step-1 { background-color: #3b82f6; }
-.step-2 { background-color: #16a34a; }
-.step-3 { background-color: #f97316; }
+.hiw-step-1 { background-color: #3b82f6; }
+.hiw-step-2 { background-color: #16a34a; }
+.hiw-step-3 { background-color: #f97316; }
 
-.step-card h3 {
+.hiw-step-card h3 {
   font-size: 1.5rem;
   color: #1e293b;
   margin-bottom: 10px;
 }
 
-.step-card p {
+.hiw-step-card p {
   color: #64748b;
   line-height: 1.6;
 }

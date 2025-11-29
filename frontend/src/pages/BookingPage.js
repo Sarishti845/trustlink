@@ -173,39 +173,98 @@ function BookingPage() {
     fetchProvider();
   }, [providerId]);
 
-  const handleConfirmBooking = async () => {
-    if (!userInfo) {
-      alert('Please login to make a booking.');
-      navigate('/login');
-      return;
-    }
+  // const handleConfirmBooking = async () => {
+  //   if (!userInfo) {
+  //     alert('Please login to make a booking.');
+  //     navigate('/login');
+  //     return;
+  //   }
 
-    const bookingData = {
-      provider: provider._id,
-      bookingDate,
-      bookingTime,
-      totalCost: provider.hourlyRate * estimatedDuration,
+  //   const bookingData = {
+  //     // provider: provider._id,
+  //     provider: provider.user._id,
+  //     bookingDate,
+  //     bookingTime,
+  //     totalCost: provider.hourlyRate * estimatedDuration,
+  //   };
+
+  //   try {
+  //     const config = {
+  //       headers: {
+  //         Authorization: `Bearer ${userInfo.token}`,
+  //       },
+  //     };
+
+  //     const { data } = await axios.post('http://localhost:5000/api/bookings', bookingData, config);
+
+  //     console.log('Booking created:', data); // This line fixes the warning
+
+  //     alert('Booking successful!');
+  //     navigate('/'); // Navigate to homepage after booking
+
+  //   } catch (error) {
+  //     console.error('Booking failed:', error);
+  //     alert('Booking failed. Please try again.');
+  //   }
+  // };
+  const handleConfirmBooking = async () => {
+  if (!userInfo) {
+    alert('Please login to make a booking.');
+    navigate('/login');
+    return;
+  }
+
+  try {
+    // 1️⃣ Create Razorpay Order
+    const orderRes = await axios.post(
+      "http://localhost:5000/api/payment/create-order",
+      { amount: totalEstimate }   // amount in INR
+    );
+
+    const order = orderRes.data;
+
+    // 2️⃣ Initialize Razorpay Checkout
+    const options = {
+      key: "rzp_test_RiW0eLt2MwgNVv", // your TEST KEY ID
+      amount: order.amount,
+      currency: "INR",
+      name: "TrustLink Services",
+      description: "Service Booking Payment",
+      order_id: order.id,
+      handler: async function (response) {
+        // 3️⃣ On Payment Success → Save booking in DB
+        const bookingData = {
+          provider: provider.user._id,
+          bookingDate,
+          bookingTime,
+          totalCost: totalEstimate,
+          paymentId: response.razorpay_payment_id,
+          orderId: order.id
+        };
+
+        const config = {
+          headers: { Authorization: `Bearer ${userInfo.token}` }
+        };
+
+        await axios.post("http://localhost:5000/api/bookings", bookingData, config);
+
+        alert("Payment successful! Booking confirmed 🎉");
+        navigate("/");
+      },
+      theme: {
+        color: "#0d6efd",
+      },
     };
 
-    try {
-      const config = {
-        headers: {
-          Authorization: `Bearer ${userInfo.token}`,
-        },
-      };
+    const rzp = new window.Razorpay(options);
+    rzp.open();
 
-      const { data } = await axios.post('http://localhost:5000/api/bookings', bookingData, config);
+  } catch (error) {
+    console.error(error);
+    alert("Payment failed to initiate");
+  }
+};
 
-      console.log('Booking created:', data); // This line fixes the warning
-
-      alert('Booking successful!');
-      navigate('/'); // Navigate to homepage after booking
-
-    } catch (error) {
-      console.error('Booking failed:', error);
-      alert('Booking failed. Please try again.');
-    }
-  };
 
   if (loading) return <div>Loading...</div>;
   if (!provider) return <div>Provider not found.</div>;

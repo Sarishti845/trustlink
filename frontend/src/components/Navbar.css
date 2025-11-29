@@ -98,3 +98,19 @@ a.nav-btn-signin, a.nav-btn-signup {
   margin-right: 10px; /* Space between icon and text */
   font-size: 2.5rem; /* Make icon slightly larger */
 }
+
+
+.nav-btn-dashboard {
+  background: #eaf1ff;
+  color: #1e4ed8;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-btn-dashboard:hover {
+  background: #d4e2ff;
+}

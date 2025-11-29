@@ -44,12 +44,16 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require('path');
 
 const userRoutes = require("./routes/userRoutes.js");
 const providerRoutes = require("./routes/providerRoutes.js");
 const bookingRoutes = require("./routes/bookingRoutes.js");
 const chatRoutes = require("./routes/chatRoutes.js"); // ✅ Import chat route
 const reviewRoutes = require("./routes/reviewRoutes.js");
+const adminRoutes = require('./routes/adminRoutes.js');
+const disputeRoutes = require('./routes/disputeRoutes');
+const paymentRoutes = require("./routes/paymentRoutes");
 
 // const reviewRoutes = require('./routes/reviewRoutes.js');
 // const reviewRoutes = require('./routes/reviewRoutes.js');
@@ -63,6 +67,8 @@ app.use(cors());
 app.use(express.json());
 
 // ✅ Register routes BEFORE starting the server
+// Make uploads folder static
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 app.use("/api/users", userRoutes);
 app.use("/api/providers", providerRoutes);
 app.use("/api/bookings", bookingRoutes);
@@ -71,6 +77,11 @@ app.use("/api/chat", chatRoutes); // ✅ Make sure this line is ABOVE app.listen
 console.log("✅ Chat route registered at /api/chat"); 
 app.use("/api/reviews", reviewRoutes);
 console.log("✅ Review route registered at /api/reviews");
+app.use('/api/admin', adminRoutes);
+// app.use("/uploads", express.static("uploads"));
+app.use('/api/disputes', disputeRoutes);
+
+app.use("/api/payment", paymentRoutes);
 
 
 // Connect to MongoDB and then start the server

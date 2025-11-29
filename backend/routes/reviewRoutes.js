@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Review = require("../models/reviewModel.js");
 
+
+
 const router = express.Router();
 
 // ✅ POST: Add new review
@@ -27,6 +29,42 @@ router.post("/", async (req, res) => {
     res.status(500).json({ success: false, error: "Internal server error" });
   }
 });
+
+
+
+
+
+
+// // ✅ POST: Add new review (only for logged-in users)
+// router.post("/", protect, async (req, res) => {
+//   try {
+//     const { providerId, rating, comment } = req.body;
+
+//     // Validate input
+//     if (!providerId || !rating) {
+//       return res.status(400).json({ success: false, error: "Missing required fields" });
+//     }
+
+//     // Create new review using logged-in user info
+//     const newReview = new Review({
+//       user: req.user._id,       // ✅ logged-in customer's ID
+//       provider: providerId,     // provider being reviewed
+//       rating,
+//       comment,
+//     });
+
+//     await newReview.save();
+//     res.status(201).json({
+//       success: true,
+//       message: "Review added successfully!",
+//       review: newReview,
+//     });
+//   } catch (error) {
+//     console.error("❌ Error saving review:", error);
+//     res.status(500).json({ success: false, error: "Internal server error" });
+//   }
+// });
+
 
 // ✅ GET: Get all reviews for a provider
 router.get("/:providerId", async (req, res) => {

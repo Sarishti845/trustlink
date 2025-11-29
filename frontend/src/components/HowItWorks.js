@@ -49,21 +49,21 @@ function HowItWorks() {
 
       {/* --- Main 3 Steps --- */}
       <div className="steps-container">
-        <div className="step-card">
-          <div className="step-icon-wrapper"><MdOutlineScreenSearchDesktop /></div>
-          <div className="step-number step-1">1</div>
+        <div className="hiw-step-card">
+          <div className="hiw-step-icon-wrapper"><MdOutlineScreenSearchDesktop /></div>
+          <div className="hiw-step-number hiw-step-1">1</div>
           <h3>Search & Browse</h3>
           <p>Browse through our curated list of verified service providers. Filter by location, price, availability, and customer ratings.</p>
         </div>
-        <div className="step-card">
-          <div className="step-icon-wrapper"><MdOutlineBookmarkAdded /></div>
-          <div className="step-number step-2">2</div>
+        <div className="hiw-step-card">
+          <div className="hiw-step-icon-wrapper"><MdOutlineBookmarkAdded /></div>
+          <div className="hiw-step-number hiw-step-2">2</div>
           <h3>Book & Confirm</h3>
           <p>Select your preferred time slot and get instant confirmation. Chat directly with your service provider to discuss requirements.</p>
         </div>
-        <div className="step-card">
-          <div className="step-icon-wrapper"><MdOutlineStarRate /></div>
-          <div className="step-number step-3">3</div>
+        <div className="hiw-step-card">
+          <div className="hiw-step-icon-wrapper"><MdOutlineStarRate /></div>
+          <div className="hiw-step-number hiw-step-3">3</div>
           <h3>Service & Review</h3>
           <p>Get professional service at the scheduled time with transparent pricing. Rate your experience and help maintain our community.</p>
         </div>

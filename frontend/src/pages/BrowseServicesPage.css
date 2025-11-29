@@ -272,8 +272,59 @@
 /* AVAILABLE PROFESSIONALS */
 .available-professionals h2 {
   text-align: left;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   color: #1e293b;
 }
 
 
+
+/* FILTER BAR */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+  gap: 15px; /* Add gap for wrapping */
+}
+
+/* This rule is for the search input */
+.filter-search-input {
+  flex: 1; /* Allow it to grow */
+  min-width: 250px; /* Prevent it from getting too small */
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+}
+
+.filter-dropdowns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap; /* Allow dropdowns to wrap */
+}
+
+.filter-dropdowns select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.more-filters-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  padding: 9px 14px; /* Adjust padding to match select */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+/* ... rest of your CSS ... */
