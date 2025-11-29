@@ -17,7 +17,7 @@ function SupportChatWidget() {
 
     try {
       // Send to backend (store in MongoDB)
-      await axios.post("http://localhost:5000/api/chat", { message });
+      await axios.post("https://trustlink-backend-svlc.onrender.com/api/chat", { message });
 
       // Optional auto-reply simulation
       setTimeout(() => {

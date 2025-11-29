@@ -29,7 +29,7 @@
 //     data.append("license", license);
 
 //     try {
-//       await axios.post("http://localhost:5000/api/providers/verify", data, {
+//       await axios.post("https://trustlink-backend-svlc.onrender.com/api/providers/verify", data, {
 //         headers: { "Content-Type": "multipart/form-data" },
 //       });
 //     //   alert("Application submitted successfully!");
@@ -200,7 +200,7 @@ function JoinProviderPage() {
       };
 
       // 8. Use the correct API endpoint (we will build this next)
-      await axios.post("http://localhost:5000/api/providers/apply", data, config);
+      await axios.post("https://trustlink-backend-svlc.onrender.com/api/providers/apply", data, config);
 
       setSubmitted(true); // Show success banner
       // Optional: Clear form after successful submission

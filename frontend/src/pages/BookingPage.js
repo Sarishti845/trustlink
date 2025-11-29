@@ -21,7 +21,7 @@
 //   useEffect(() => {
 //     const fetchProvider = async () => {
 //       try {
-//         const { data } = await axios.get(`http://localhost:5000/api/providers/${providerId}`);
+//         const { data } = await axios.get(`https://trustlink-backend-svlc.onrender.com/api/providers/${providerId}`);
 //         setProvider(data);
 //         setLoading(false);
 //       } catch (error) {
@@ -54,7 +54,7 @@
 //         },
 //       };
 
-//       const { data } = await axios.post('http://localhost:5000/api/bookings', bookingData, config);
+//       const { data } = await axios.post('https://trustlink-backend-svlc.onrender.com/api/bookings', bookingData, config);
 
 //       alert('Booking successful!');
 //       navigate('/'); // Navigate to homepage after booking
@@ -162,7 +162,7 @@ function BookingPage() {
   useEffect(() => {
     const fetchProvider = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/providers/${providerId}`);
+        const { data } = await axios.get(`https://trustlink-backend-svlc.onrender.com/api/providers/${providerId}`);
         setProvider(data);
         setLoading(false);
       } catch (error) {
@@ -195,7 +195,7 @@ function BookingPage() {
   //       },
   //     };
 
-  //     const { data } = await axios.post('http://localhost:5000/api/bookings', bookingData, config);
+  //     const { data } = await axios.post('https://trustlink-backend-svlc.onrender.com/api/bookings', bookingData, config);
 
   //     console.log('Booking created:', data); // This line fixes the warning
 
@@ -217,7 +217,7 @@ function BookingPage() {
   try {
     // 1️⃣ Create Razorpay Order
     const orderRes = await axios.post(
-      "http://localhost:5000/api/payment/create-order",
+      "https://trustlink-backend-svlc.onrender.com/api/payment/create-order",
       { amount: totalEstimate }   // amount in INR
     );
 
@@ -246,7 +246,7 @@ function BookingPage() {
           headers: { Authorization: `Bearer ${userInfo.token}` }
         };
 
-        await axios.post("http://localhost:5000/api/bookings", bookingData, config);
+        await axios.post("https://trustlink-backend-svlc.onrender.com/api/bookings", bookingData, config);
 
         alert("Payment successful! Booking confirmed 🎉");
         navigate("/");

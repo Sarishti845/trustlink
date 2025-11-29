@@ -10,7 +10,7 @@
 //   useEffect(() => {
 //     const fetchProviders = async () => {
 //       try {
-//         const { data } = await axios.get('http://localhost:5000/api/providers');
+//         const { data } = await axios.get('https://trustlink-backend-svlc.onrender.com/api/providers');
 //         setProviders(data);
 //       } catch (error) {
 //         console.error('Could not fetch providers:', error);
@@ -71,14 +71,14 @@
 //     const fetchProviders = async () => {
 //       try {
 //         // 1️⃣ Fetch all providers
-//         const { data } = await axios.get('http://localhost:5000/api/providers');
+//         const { data } = await axios.get('https://trustlink-backend-svlc.onrender.com/api/providers');
 
 //         // 2️⃣ For each provider, get its review summary (avg + total)
 //         const withRatings = await Promise.all(
 //           data.map(async (provider) => {
 //             try {
 //               const summaryRes = await axios.get(
-//                 `http://localhost:5000/api/reviews/${provider._id}/summary`
+//                 `https://trustlink-backend-svlc.onrender.com/api/reviews/${provider._id}/summary`
 //               );
 //               return { ...provider, ratingSummary: summaryRes.data };
 //             } catch (err) {
@@ -175,13 +175,13 @@ function FeaturedProfessionals() {
   useEffect(() => {
     const fetchProviders = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/providers');
+        const { data } = await axios.get('https://trustlink-backend-svlc.onrender.com/api/providers');
 
         const withRatings = await Promise.all(
           data.map(async (provider) => {
             try {
               const summaryRes = await axios.get(
-                `http://localhost:5000/api/reviews/${provider._id}/summary`
+                `https://trustlink-backend-svlc.onrender.com/api/reviews/${provider._id}/summary`
               );
               return { ...provider, ratingSummary: summaryRes.data };
             } catch {

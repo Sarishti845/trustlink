@@ -41,14 +41,14 @@
 
 //         // Load bookings
 //         const res1 = await axios.get(
-//           "http://localhost:5000/api/bookings/mybookings",
+//           "https://trustlink-backend-svlc.onrender.com/api/bookings/mybookings",
 //           config
 //         );
 //         setBookings(res1.data.bookings || []);
 
 //         // Load disputes
 //         const res2 = await axios.get(
-//           "http://localhost:5000/api/disputes/mine",
+//           "https://trustlink-backend-svlc.onrender.com/api/disputes/mine",
 //           config
 //         );
 //         setCustomerDisputes(res2.data || []);
@@ -68,7 +68,7 @@
 //   const cancelBooking = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/bookings/cancel/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/bookings/cancel/${id}`,
 //         {},
 //         { headers: { Authorization: `Bearer ${userInfo.token}` } }
 //       );
@@ -93,7 +93,7 @@
 
 //     try {
 //       await axios.post(
-//         "http://localhost:5000/api/disputes",
+//         "https://trustlink-backend-svlc.onrender.com/api/disputes",
 //         {
 //           bookingId: selectedBookingId,
 //           reason: disputeReason,
@@ -109,7 +109,7 @@
 
 //       // Refresh disputes
 //       const res = await axios.get(
-//         "http://localhost:5000/api/disputes/mine",
+//         "https://trustlink-backend-svlc.onrender.com/api/disputes/mine",
 //         {
 //           headers: { Authorization: `Bearer ${userInfo.token}` },
 //         }
@@ -474,13 +474,13 @@ function CustomerDashboard() {
         const config = buildAuthConfig(userInfo.token);
 
         const res1 = await axios.get(
-          "http://localhost:5000/api/bookings/mybookings",
+          "https://trustlink-backend-svlc.onrender.com/api/bookings/mybookings",
           config
         );
         setBookings(res1.data.bookings || []);
 
         const res2 = await axios.get(
-          "http://localhost:5000/api/disputes/mine",
+          "https://trustlink-backend-svlc.onrender.com/api/disputes/mine",
           config
         );
         setCustomerDisputes(res2.data || []);
@@ -500,7 +500,7 @@ function CustomerDashboard() {
   const cancelBooking = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/bookings/cancel/${id}`,
+        `https://trustlink-backend-svlc.onrender.com/api/bookings/cancel/${id}`,
         {},
         buildAuthConfig(userInfo.token)
       );
@@ -525,7 +525,7 @@ function CustomerDashboard() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/disputes",
+        "https://trustlink-backend-svlc.onrender.com/api/disputes",
         {
           bookingId: selectedBookingId,
           reason: disputeReason,
@@ -540,7 +540,7 @@ function CustomerDashboard() {
       setDisputeReason("");
 
       const res = await axios.get(
-        "http://localhost:5000/api/disputes/mine",
+        "https://trustlink-backend-svlc.onrender.com/api/disputes/mine",
         buildAuthConfig(userInfo.token)
       );
       setCustomerDisputes(res.data);

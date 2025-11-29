@@ -32,7 +32,7 @@
 //       const config = { headers: { Authorization: `Bearer ${userInfo.token}` } };
 
 //       const { data } = await axios.get(
-//         "http://localhost:5000/api/admin/pending-providers",
+//         "https://trustlink-backend-svlc.onrender.com/api/admin/pending-providers",
 //         config
 //       );
 
@@ -55,7 +55,7 @@
 
 //       // ✔ Correct backend route
 //       const { data } = await axios.get(
-//         "http://localhost:5000/api/disputes",
+//         "https://trustlink-backend-svlc.onrender.com/api/disputes",
 //         config
 //       );
 
@@ -82,7 +82,7 @@
 //       const config = { headers: { Authorization: `Bearer ${userInfo.token}` } };
 
 //       await axios.put(
-//         `http://localhost:5000/api/admin/providers/${id}/verify`,
+//         `https://trustlink-backend-svlc.onrender.com/api/admin/providers/${id}/verify`,
 //         {},
 //         config
 //       );
@@ -110,7 +110,7 @@
 
 //       // ✔ Correct backend route
 //       await axios.put(
-//         `http://localhost:5000/api/disputes/${id}/resolve`,
+//         `https://trustlink-backend-svlc.onrender.com/api/disputes/${id}/resolve`,
 //         {
 //           decision,
 //           notes,
@@ -192,7 +192,7 @@
 //                         <a
 //                           className="doc-link"
 //                           target="_blank"
-//                           href={`http://localhost:5000/${provider.providerProfile.idProofPath.replace(
+//                           href={`https://trustlink-backend-svlc.onrender.com/${provider.providerProfile.idProofPath.replace(
 //                             /\\/g,
 //                             "/"
 //                           )}`}
@@ -205,7 +205,7 @@
 //                         <a
 //                           className="doc-link"
 //                           target="_blank"
-//                           href={`http://localhost:5000/${provider.providerProfile.licensePath.replace(
+//                           href={`https://trustlink-backend-svlc.onrender.com/${provider.providerProfile.licensePath.replace(
 //                             /\\/g,
 //                             "/"
 //                           )}`}
@@ -359,7 +359,7 @@ function AdminPage() {
       setLoadingProviders(true);
 
       const { data } = await axios.get(
-        "http://localhost:5000/api/admin/pending-providers",
+        "https://trustlink-backend-svlc.onrender.com/api/admin/pending-providers",
         authConfig()
       );
 
@@ -381,7 +381,7 @@ function AdminPage() {
       setLoadingDisputes(true);
 
       const { data } = await axios.get(
-        "http://localhost:5000/api/disputes",
+        "https://trustlink-backend-svlc.onrender.com/api/disputes",
         authConfig()
       );
 
@@ -406,7 +406,7 @@ function AdminPage() {
   const handleApprove = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/providers/${id}/verify`,
+        `https://trustlink-backend-svlc.onrender.com/api/admin/providers/${id}/verify`,
         {},
         authConfig()
       );
@@ -431,7 +431,7 @@ function AdminPage() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/disputes/${id}/resolve`,
+        `https://trustlink-backend-svlc.onrender.com/api/disputes/${id}/resolve`,
         { decision, notes },
         authConfig()
       );
@@ -452,7 +452,7 @@ function AdminPage() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/escrow/release/${bookingId}`,
+        `https://trustlink-backend-svlc.onrender.com/api/admin/escrow/release/${bookingId}`,
         {},
         authConfig()
       );
@@ -470,7 +470,7 @@ function AdminPage() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/escrow/refund/${bookingId}`,
+        `https://trustlink-backend-svlc.onrender.com/api/admin/escrow/refund/${bookingId}`,
         {},
         authConfig()
       );
@@ -539,7 +539,7 @@ function AdminPage() {
                           className="doc-link"
                           target="_blank"
                           rel="noreferrer"
-                          href={`http://localhost:5000/${p.providerProfile.idProofPath}`}
+                          href={`https://trustlink-backend-svlc.onrender.com/${p.providerProfile.idProofPath}`}
                         >
                           View ID Proof
                         </a>
@@ -549,7 +549,7 @@ function AdminPage() {
                           className="doc-link"
                           target="_blank"
                           rel="noreferrer"
-                          href={`http://localhost:5000/${p.providerProfile.licensePath}`}
+                          href={`https://trustlink-backend-svlc.onrender.com/${p.providerProfile.licensePath}`}
                         >
                           View License
                         </a>

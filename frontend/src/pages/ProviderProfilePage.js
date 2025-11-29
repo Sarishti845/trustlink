@@ -10,7 +10,7 @@
 //   useEffect(() => {
 //     const fetchProvider = async () => {
 //       try {
-//         const { data } = await axios.get(`http://localhost:5000/api/providers/${id}`);
+//         const { data } = await axios.get(`https://trustlink-backend-svlc.onrender.com/api/providers/${id}`);
 //         setProvider(data);
 //         setLoading(false);
 //       } catch (error) {
@@ -63,7 +63,7 @@ function ProviderProfilePage() {
   // useEffect(() => {
   //   const fetchProvider = async () => {
   //     try {
-  //       const { data } = await axios.get(`http://localhost:5000/api/providers/${id}`);
+  //       const { data } = await axios.get(`https://trustlink-backend-svlc.onrender.com/api/providers/${id}`);
   //       setProvider(data);
   //       setLoading(false);
   //     } catch (error) {
@@ -76,7 +76,7 @@ function ProviderProfilePage() {
   useEffect(() => {
   const fetchProvider = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:5000/api/providers/${id}`);
+      const { data } = await axios.get(`https://trustlink-backend-svlc.onrender.com/api/providers/${id}`);
       setProvider(data);
     } catch (error) {
       console.error('Error fetching provider details:', error);
@@ -85,7 +85,7 @@ function ProviderProfilePage() {
 
   const fetchRatingSummary = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:5000/api/reviews/${id}/summary`);
+      const { data } = await axios.get(`https://trustlink-backend-svlc.onrender.com/api/reviews/${id}/summary`);
       setRatingSummary(data);
     } catch (error) {
       console.error("Error fetching rating summary:", error);
@@ -104,7 +104,7 @@ function ProviderProfilePage() {
 
   const refreshRatingSummary = async () => {
   try {
-    const { data } = await axios.get(`http://localhost:5000/api/reviews/${id}/summary`);
+    const { data } = await axios.get(`https://trustlink-backend-svlc.onrender.com/api/reviews/${id}/summary`);
     setRatingSummary(data);
   } catch (error) {
     console.error("Error refreshing rating summary:", error);

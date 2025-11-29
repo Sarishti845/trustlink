@@ -54,7 +54,7 @@
 
 //         // Profile
 //         const profileRes = await axios.get(
-//           "http://localhost:5000/api/providers/me",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/me",
 //           config
 //         );
 
@@ -68,27 +68,27 @@
 
 //         // Bookings
 //         const { data: bookingsData } = await axios.get(
-//           "http://localhost:5000/api/providers/my-jobs",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/my-jobs",
 //           config
 //         );
 //         setBookings(bookingsData.bookings || []);
 
 //         // Earnings
 //         const { data: earningsData } = await axios.get(
-//           "http://localhost:5000/api/providers/earnings",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/earnings",
 //           config
 //         );
 //         setEarnings(earningsData || {});
 
 //         // Rating
 //         const { data: ratingData } = await axios.get(
-//           `http://localhost:5000/api/reviews/${providerId}/summary`
+//           `https://trustlink-backend-svlc.onrender.com/api/reviews/${providerId}/summary`
 //         );
 //         setAverageRating(ratingData.avgRating || 0);
 
 //         // DISPUTES for provider
 //         const disputesRes = await axios.get(
-//           "http://localhost:5000/api/disputes/provider/mine",
+//           "https://trustlink-backend-svlc.onrender.com/api/disputes/provider/mine",
 //           config
 //         );
 //         setProviderDisputes(disputesRes.data || []);
@@ -106,7 +106,7 @@
 //   const handleConfirm = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/confirm/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/confirm/${id}`,
 //         {},
 //         { headers: { Authorization: `Bearer ${userInfo.token}` } }
 //       );
@@ -121,7 +121,7 @@
 //   const handleComplete = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/complete/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/complete/${id}`,
 //         {},
 //         { headers: { Authorization: `Bearer ${userInfo.token}` } }
 //       );
@@ -136,7 +136,7 @@
 //   const handleReject = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/reject/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/reject/${id}`,
 //         {},
 //         { headers: { Authorization: `Bearer ${userInfo.token}` } }
 //       );
@@ -154,7 +154,7 @@
 
 //     try {
 //       await axios.post(
-//         `http://localhost:5000/api/disputes/${id}/respond`,
+//         `https://trustlink-backend-svlc.onrender.com/api/disputes/${id}/respond`,
 //         { message },
 //         { headers: { Authorization: `Bearer ${userInfo.token}` } }
 //       );
@@ -163,7 +163,7 @@
 
 //       // Refresh disputes
 //       const res = await axios.get(
-//         "http://localhost:5000/api/disputes/provider/mine",
+//         "https://trustlink-backend-svlc.onrender.com/api/disputes/provider/mine",
 //         { headers: { Authorization: `Bearer ${userInfo.token}` } }
 //       );
 //       setProviderDisputes(res.data);
@@ -598,7 +598,7 @@
 //         setLoading(true);
 //         // profile
 //         const profileRes = await axios.get(
-//           "http://localhost:5000/api/providers/me",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/me",
 //           authConfig()
 //         );
 
@@ -614,14 +614,14 @@
 
 //         // bookings
 //         const { data: bookingsData } = await axios.get(
-//           "http://localhost:5000/api/providers/my-jobs",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/my-jobs",
 //           authConfig()
 //         );
 //         if (mounted) setBookings(bookingsData.bookings || []);
 
 //         // earnings
 //         const { data: earningsData } = await axios.get(
-//           "http://localhost:5000/api/providers/earnings",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/earnings",
 //           authConfig()
 //         );
 //         if (mounted) setEarnings(earningsData || {});
@@ -629,7 +629,7 @@
 //         // rating
 //         try {
 //           const { data: ratingData } = await axios.get(
-//             `http://localhost:5000/api/reviews/${providerId}/summary`
+//             `https://trustlink-backend-svlc.onrender.com/api/reviews/${providerId}/summary`
 //           );
 //           if (mounted) setAverageRating(ratingData.avgRating || 0);
 //         } catch (err) {
@@ -639,7 +639,7 @@
 
 //         // disputes assigned to this provider
 //         const disputesRes = await axios.get(
-//           "http://localhost:5000/api/disputes/provider/mine",
+//           "https://trustlink-backend-svlc.onrender.com/api/disputes/provider/mine",
 //           authConfig()
 //         );
 
@@ -669,7 +669,7 @@
 //   const handleConfirm = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/confirm/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/confirm/${id}`,
 //         {},
 //         authConfig()
 //       );
@@ -685,7 +685,7 @@
 //   const handleComplete = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/complete/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/complete/${id}`,
 //         {},
 //         authConfig()
 //       );
@@ -701,7 +701,7 @@
 //   const handleReject = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/reject/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/reject/${id}`,
 //         {},
 //         authConfig()
 //       );
@@ -726,14 +726,14 @@
 
 //     try {
 //       await axios.post(
-//         `http://localhost:5000/api/disputes/${disputeId}/respond`,
+//         `https://trustlink-backend-svlc.onrender.com/api/disputes/${disputeId}/respond`,
 //         { message },
 //         authConfig()
 //       );
 
 //       // refresh only the changed dispute (or re-fetch all disputes)
 //       const res = await axios.get(
-//         "http://localhost:5000/api/disputes/provider/mine",
+//         "https://trustlink-backend-svlc.onrender.com/api/disputes/provider/mine",
 //         authConfig()
 //       );
 
@@ -949,7 +949,7 @@
 //                 e.preventDefault();
 //                 // optional save flow; you already had handleSaveProfile earlier.
 //                 axios
-//                   .put("http://localhost:5000/api/providers/me", profileData, authConfig())
+//                   .put("https://trustlink-backend-svlc.onrender.com/api/providers/me", profileData, authConfig())
 //                   .then(() => alert("Profile updated"))
 //                   .catch((err) => {
 //                     console.error("Error updating profile", err);
@@ -1139,7 +1139,7 @@
 
 //         // profile
 //         const profileRes = await axios.get(
-//           "http://localhost:5000/api/providers/me",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/me",
 //           authConfig(token)
 //         );
 
@@ -1155,14 +1155,14 @@
 
 //         // bookings
 //         const { data: bookingsData } = await axios.get(
-//           "http://localhost:5000/api/providers/my-jobs",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/my-jobs",
 //           authConfig(token)
 //         );
 //         if (mounted) setBookings(bookingsData.bookings || []);
 
 //         // earnings
 //         const { data: earningsData } = await axios.get(
-//           "http://localhost:5000/api/providers/earnings",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/earnings",
 //           authConfig(token)
 //         );
 //         if (mounted) setEarnings(earningsData || {});
@@ -1170,7 +1170,7 @@
 //         // rating (optional)
 //         try {
 //           const { data: ratingData } = await axios.get(
-//             `http://localhost:5000/api/reviews/${providerId}/summary`
+//             `https://trustlink-backend-svlc.onrender.com/api/reviews/${providerId}/summary`
 //           );
 //           if (mounted) setAverageRating(ratingData.avgRating || 0);
 //         } catch (err) {
@@ -1179,7 +1179,7 @@
 
 //         // disputes assigned to this provider
 //         const disputesRes = await axios.get(
-//           "http://localhost:5000/api/disputes/provider/mine",
+//           "https://trustlink-backend-svlc.onrender.com/api/disputes/provider/mine",
 //           authConfig(token)
 //         );
 
@@ -1210,7 +1210,7 @@
 //   const handleConfirm = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/confirm/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/confirm/${id}`,
 //         {},
 //         authConfig()
 //       );
@@ -1226,7 +1226,7 @@
 //   const handleComplete = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/complete/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/complete/${id}`,
 //         {},
 //         authConfig()
 //       );
@@ -1243,7 +1243,7 @@
 //   const handleReject = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/reject/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/reject/${id}`,
 //         {},
 //         authConfig()
 //       );
@@ -1271,7 +1271,7 @@
 
 //     try {
 //       const res = await axios.post(
-//         `http://localhost:5000/api/bookings/${bookingId}/verify-otp`,
+//         `https://trustlink-backend-svlc.onrender.com/api/bookings/${bookingId}/verify-otp`,
 //         { otp },
 //         authConfig()
 //       );
@@ -1302,14 +1302,14 @@
 
 //     try {
 //       await axios.post(
-//         `http://localhost:5000/api/disputes/${disputeId}/respond`,
+//         `https://trustlink-backend-svlc.onrender.com/api/disputes/${disputeId}/respond`,
 //         { message },
 //         authConfig()
 //       );
 
 //       // refresh provider disputes
 //       const res = await axios.get(
-//         "http://localhost:5000/api/disputes/provider/mine",
+//         "https://trustlink-backend-svlc.onrender.com/api/disputes/provider/mine",
 //         authConfig()
 //       );
 
@@ -1556,7 +1556,7 @@
 //               onSubmit={(e) => {
 //                 e.preventDefault();
 //                 axios
-//                   .put("http://localhost:5000/api/providers/me", profileData, authConfig())
+//                   .put("https://trustlink-backend-svlc.onrender.com/api/providers/me", profileData, authConfig())
 //                   .then(() => alert("Profile updated"))
 //                   .catch((err) => {
 //                     console.error("Error updating profile", err);
@@ -1750,7 +1750,7 @@
 
 //         // Provider Profile
 //         const profileRes = await axios.get(
-//           "http://localhost:5000/api/providers/me",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/me",
 //           buildAuthConfig(token)
 //         );
 
@@ -1766,7 +1766,7 @@
 
 //         // Provider Jobs
 //         const jobsRes = await axios.get(
-//           "http://localhost:5000/api/providers/my-jobs",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/my-jobs",
 //           buildAuthConfig(token)
 //         );
 
@@ -1774,7 +1774,7 @@
 
 //         // Earnings
 //         const earningsRes = await axios.get(
-//           "http://localhost:5000/api/providers/earnings",
+//           "https://trustlink-backend-svlc.onrender.com/api/providers/earnings",
 //           buildAuthConfig(token)
 //         );
 //         if (mounted) setEarnings(earningsRes.data || {});
@@ -1782,7 +1782,7 @@
 //         // Average Rating
 //         try {
 //           const ratingRes = await axios.get(
-//             `http://localhost:5000/api/reviews/${providerId}/summary`
+//             `https://trustlink-backend-svlc.onrender.com/api/reviews/${providerId}/summary`
 //           );
 //           if (mounted) setAverageRating(ratingRes.data.avgRating || 0);
 //         } catch {
@@ -1791,7 +1791,7 @@
 
 //         // Disputes assigned to provider
 //         const disputesRes = await axios.get(
-//           "http://localhost:5000/api/disputes/provider/mine",
+//           "https://trustlink-backend-svlc.onrender.com/api/disputes/provider/mine",
 //           buildAuthConfig(token)
 //         );
 
@@ -1820,7 +1820,7 @@
 //   const handleConfirm = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/confirm/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/confirm/${id}`,
 //         {},
 //         buildAuthConfig(userInfo.token)
 //       );
@@ -1839,7 +1839,7 @@
 //   const handleComplete = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/complete/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/complete/${id}`,
 //         {},
 //         buildAuthConfig(userInfo.token)
 //       );
@@ -1861,7 +1861,7 @@
 //   const handleReject = async (id) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/providers/reject/${id}`,
+//         `https://trustlink-backend-svlc.onrender.com/api/providers/reject/${id}`,
 //         {},
 //         buildAuthConfig(userInfo.token)
 //       );
@@ -1886,7 +1886,7 @@
 
 //     try {
 //       const res = await axios.post(
-//         `http://localhost:5000/api/bookings/${bookingId}/verify-otp`,
+//         `https://trustlink-backend-svlc.onrender.com/api/bookings/${bookingId}/verify-otp`,
 //         { otp },
 //         buildAuthConfig(userInfo.token)
 //       );
@@ -1913,13 +1913,13 @@
 
 //     try {
 //       await axios.post(
-//         `http://localhost:5000/api/disputes/${id}/respond`,
+//         `https://trustlink-backend-svlc.onrender.com/api/disputes/${id}/respond`,
 //         { message: msg },
 //         buildAuthConfig(userInfo.token)
 //       );
 
 //       const res = await axios.get(
-//         "http://localhost:5000/api/disputes/provider/mine",
+//         "https://trustlink-backend-svlc.onrender.com/api/disputes/provider/mine",
 //         buildAuthConfig(userInfo.token)
 //       );
 
@@ -2154,7 +2154,7 @@
 //                 e.preventDefault();
 //                 axios
 //                   .put(
-//                     "http://localhost:5000/api/providers/me",
+//                     "https://trustlink-backend-svlc.onrender.com/api/providers/me",
 //                     profileData,
 //                     buildAuthConfig(userInfo.token)
 //                   )
@@ -2328,7 +2328,7 @@ function ProviderDashboard() {
   const fetchBookings = async (token) => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/providers/my-jobs",
+        "https://trustlink-backend-svlc.onrender.com/api/providers/my-jobs",
         authConfig(token)
       );
       setBookings(data.bookings || []);
@@ -2354,7 +2354,7 @@ function ProviderDashboard() {
 
         // profile
         const profileRes = await axios.get(
-          "http://localhost:5000/api/providers/me",
+          "https://trustlink-backend-svlc.onrender.com/api/providers/me",
           authConfig(token)
         );
 
@@ -2376,7 +2376,7 @@ function ProviderDashboard() {
         // earnings
         try {
           const { data: earningsData } = await axios.get(
-            "http://localhost:5000/api/providers/earnings",
+            "https://trustlink-backend-svlc.onrender.com/api/providers/earnings",
             authConfig(token)
           );
           if (mounted) setEarnings(earningsData || {});
@@ -2388,7 +2388,7 @@ function ProviderDashboard() {
         // rating (optional)
         try {
           const { data: ratingData } = await axios.get(
-            `http://localhost:5000/api/reviews/${providerId}/summary`
+            `https://trustlink-backend-svlc.onrender.com/api/reviews/${providerId}/summary`
           );
           if (mounted) setAverageRating(ratingData.avgRating || 0);
         } catch (err) {
@@ -2398,7 +2398,7 @@ function ProviderDashboard() {
         // disputes assigned to this provider
         try {
           const disputesRes = await axios.get(
-            "http://localhost:5000/api/disputes/provider/mine",
+            "https://trustlink-backend-svlc.onrender.com/api/disputes/provider/mine",
             authConfig(token)
           );
 
@@ -2433,7 +2433,7 @@ function ProviderDashboard() {
   const handleConfirm = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/providers/confirm/${id}`,
+        `https://trustlink-backend-svlc.onrender.com/api/providers/confirm/${id}`,
         {},
         authConfig()
       );
@@ -2449,7 +2449,7 @@ function ProviderDashboard() {
   const handleComplete = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/providers/complete/${id}`,
+        `https://trustlink-backend-svlc.onrender.com/api/providers/complete/${id}`,
         {},
         authConfig()
       );
@@ -2466,7 +2466,7 @@ function ProviderDashboard() {
   const handleReject = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/providers/reject/${id}`,
+        `https://trustlink-backend-svlc.onrender.com/api/providers/reject/${id}`,
         {},
         authConfig()
       );
@@ -2494,7 +2494,7 @@ function ProviderDashboard() {
 
     try {
       const { data } = await axios.post(
-        `http://localhost:5000/api/bookings/${bookingId}/verify-otp`,
+        `https://trustlink-backend-svlc.onrender.com/api/bookings/${bookingId}/verify-otp`,
         { otp },
         authConfig()
       );
@@ -2521,14 +2521,14 @@ function ProviderDashboard() {
 
     try {
       await axios.post(
-        `http://localhost:5000/api/disputes/${disputeId}/respond`,
+        `https://trustlink-backend-svlc.onrender.com/api/disputes/${disputeId}/respond`,
         { message },
         authConfig()
       );
 
       // refresh provider disputes
       const res = await axios.get(
-        "http://localhost:5000/api/disputes/provider/mine",
+        "https://trustlink-backend-svlc.onrender.com/api/disputes/provider/mine",
         authConfig()
       );
 
@@ -2775,7 +2775,7 @@ function ProviderDashboard() {
               onSubmit={(e) => {
                 e.preventDefault();
                 axios
-                  .put("http://localhost:5000/api/providers/me", profileData, authConfig())
+                  .put("https://trustlink-backend-svlc.onrender.com/api/providers/me", profileData, authConfig())
                   .then(() => alert("Profile updated"))
                   .catch((err) => {
                     console.error("Error updating profile", err);

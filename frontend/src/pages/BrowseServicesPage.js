@@ -27,7 +27,7 @@
 //   useEffect(() => {
 //     const fetchProviders = async () => {
 //       try {
-//         const { data } = await axios.get('http://localhost:5000/api/providers');
+//         const { data } = await axios.get('https://trustlink-backend-svlc.onrender.com/api/providers');
 //         setProviders(data);
 //         setLoading(false);
 //       } catch (error) {
@@ -206,14 +206,14 @@
 //     const fetchProviders = async () => {
 //       try {
 //         // 1️⃣ Fetch all providers
-//         const { data } = await axios.get("http://localhost:5000/api/providers");
+//         const { data } = await axios.get("https://trustlink-backend-svlc.onrender.com/api/providers");
 
 //         // 2️⃣ For each provider, fetch its rating summary
 //         const withRatings = await Promise.all(
 //           data.map(async (provider) => {
 //             try {
 //               const summaryRes = await axios.get(
-//                 `http://localhost:5000/api/reviews/${provider._id}/summary`
+//                 `https://trustlink-backend-svlc.onrender.com/api/reviews/${provider._id}/summary`
 //               );
 //               return { ...provider, ratingSummary: summaryRes.data };
 //             } catch (err) {
@@ -422,7 +422,7 @@ function BrowseServicesPage() {
 
         // Fetch providers using the backend endpoint WITH the query parameters
         // Axios automatically converts the 'params' object into a query string
-        const { data } = await axios.get('http://localhost:5000/api/providers', { params });
+        const { data } = await axios.get('https://trustlink-backend-svlc.onrender.com/api/providers', { params });
 
         // (Your rating summary logic)
         const withRatings = await Promise.all(
@@ -430,7 +430,7 @@ function BrowseServicesPage() {
             try {
               // TODO: You need to create this /summary endpoint on the backend
               const summaryRes = await axios.get(
-                `http://localhost:5000/api/reviews/${provider._id}/summary`
+                `https://trustlink-backend-svlc.onrender.com/api/reviews/${provider._id}/summary`
               );
               return { ...provider, ratingSummary: summaryRes.data };
             } catch {

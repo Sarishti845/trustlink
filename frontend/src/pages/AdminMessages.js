@@ -8,7 +8,7 @@ function AdminMessages() {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/chat");
+        const res = await axios.get("https://trustlink-backend-svlc.onrender.com/api/chat");
         setMessages(res.data.data);
       } catch (err) {
         console.error("Error fetching chat messages:", err);

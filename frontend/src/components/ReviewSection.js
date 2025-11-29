@@ -14,7 +14,7 @@ function ReviewSection({ providerId, userId, onReviewAdded }) {
   // Fetch all reviews for a provider
   const fetchReviews = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/reviews/${providerId}`);
+      const res = await axios.get(`https://trustlink-backend-svlc.onrender.com/api/reviews/${providerId}`);
       setReviews(res.data.reviews || []);
     } catch (error) {
       console.error("Error fetching reviews:", error);
@@ -34,7 +34,7 @@ function ReviewSection({ providerId, userId, onReviewAdded }) {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/reviews", {
+      await axios.post("https://trustlink-backend-svlc.onrender.com/api/reviews", {
         userId,
         providerId,
         rating,
@@ -113,7 +113,7 @@ export default ReviewSection;
 //   // Fetch all reviews for a provider
 //   const fetchReviews = async () => {
 //     try {
-//       const res = await axios.get(`http://localhost:5000/api/reviews/${providerId}`);
+//       const res = await axios.get(`https://trustlink-backend-svlc.onrender.com/api/reviews/${providerId}`);
 //       setReviews(res.data.reviews || []);
 //     } catch (error) {
 //       console.error("Error fetching reviews:", error);
@@ -141,7 +141,7 @@ export default ReviewSection;
 //       }
 
 //       await axios.post(
-//         "http://localhost:5000/api/reviews",
+//         "https://trustlink-backend-svlc.onrender.com/api/reviews",
 //         {
 //           providerId, // ✅ backend uses this + token to find user
 //           rating,
